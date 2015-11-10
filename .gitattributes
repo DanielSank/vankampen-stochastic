@@ -1,0 +1,25 @@
+# Source code files are always text.
+*.py        eol=lf
+*.pyw       eol=lf
+*.c         eol=lf
+*.cpp       eol=lf
+*.h         eol=lf
+*.hpp       eol=lf
+*.java      eol=lf
+
+# Text files are text
+*.txt       text eol=lf
+*.md        text eol=lf
+*.tex       text eol=lf
+
+# Shell scripts are only used in their proper OS
+*.bat       eol=crlf
+*.sh        eol=lf
+
+# Image files are binary.
+# We include svg because they may contain embedded binary.
+# If programs like inkscape have a problem with this, talk to Dan.
+*.svg       binary
+*.jpg       binary
+*.pdf       binary
+

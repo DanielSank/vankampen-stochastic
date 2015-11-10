@@ -1,0 +1,32 @@
+\leveldown{Volumes - pg. 3}
+
+\leveldown{Problem}
+
+Two volumes, $V_1$ and $V_2$, communicate through a hole and contain $N$ molecules without interaction.
+Show that the probability of finding $n$ molecules in $V_1$ is
+\begin{equation*}
+P(n) = (1 + \gamma)^{-N} \binom{N}{n} \gamma^n
+\end{equation*}
+where $\gamma = V_1 / V_2$.
+
+\levelstay{Solution}
+
+This is just like the coin problem.
+Each time we place a molecule, it goes into $V_1$ with probability
+\begin{equation*}
+p = \frac{V_1}{V_1 + V_2} = 1 - (1 + \gamma)^{-1}
+\end{equation*}
+and it goes into $V_2$ with probability
+\begin{equation*}
+q = 1 - p = \frac{V_2}{V_1 + V_2} = (1 + \gamma)^{-1} \, .
+\end{equation*}
+Imagine a string a labels $\{1, 2, 2, 1, 2, 2, 2, 1, 1,\ldots\}$ where the $i^\text{th}$ label tells you which volume the $i^\text{th}$ particle is in.
+The probability of any one particular arrangement with $n$ particles in $V_1$ and $N-n$ particles in $V_2$ is $p^n q^{N-n}$.
+There are $N!$ ways to rearrange all the labels, $n!$ ways to rearrange the ``$1$'' labels, and $(N-n)!$ ways to rearrange the ``$2$'' labels.
+Therefore, the probability to find $n$ ``$1$'' labels is
+\begin{align*}
+P(n)
+&= p^n q^{N-n} \frac{N!}{n! (N-n)!} \\
+&= (1 - (1 + \gamma)^{-1})^n (1 + \gamma)^{-(N-n)} \frac{N!}{n! (N-n)!} \\
+\text{(algebra)} \qquad &= \gamma^n (1+\gamma)^{-N} \binom{N}{n} \, .
+\end{align*}

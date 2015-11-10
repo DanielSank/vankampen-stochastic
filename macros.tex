@@ -1,0 +1,20 @@
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{import}
+\usepackage{coseoul}
+
+% See this Stack Exchange question for information on how this macro works
+% http://tex.stackexchange.com/questions/245348/recursively-import-sub-document-at-arbitrary-level
+
+
+\makeatletter
+\newcounter{currentimportdepth}
+\setcounter{currentimportdepth}{0}
+\newcommand{\subimportlevel}[2]{
+  \expandafter\edef\csname @currentlevel\thecurrentimportdepth\endcsname{\thecurrentlevel}
+  \addtocounter{currentimportdepth}{1}
+  \subimport*{#1}{#2}
+  \addtocounter{currentimportdepth}{-1}
+  \setcounter{currentlevel}{\csname  @currentlevel\thecurrentimportdepth\endcsname}
+}
+\makeatother

@@ -1,0 +1,19 @@
+\leveldown{Cumulative pdf}
+
+\leveldown{Problem}
+
+Show that $\mathbb{P}(x)$ must be a monotone non-decreasing function with $\mathbb{P}(-\infty) = 0$ and $\mathbb{P}(+\infty) = 1$.
+What is its relation to $\mathcal{P}$?
+
+\levelstay{Solution}
+
+That $\mathbb{P}$ is monotone non-decreasing is obvious from the fact that $P$ is positive, because
+\begin{equation*}
+\mathbb{P}(x) = \int_{-\infty}^x \, P(x') \, dx' \, .
+\end{equation*}
+It's also obvious, for the same reason (and from the normalization condition), that $\mathbb{P}(-\infty)=0$ and $\mathbb{P}(+\infty) = 1$.
+
+The relation between $\mathbb{P}$ and $\mathcal{P}$ is
+\begin{equation*}
+\mathbb{P}(x) = \mathcal{P}((-\infty, x)) \, .
+\end{equation*}

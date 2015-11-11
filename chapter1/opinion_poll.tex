@@ -23,7 +23,7 @@ P(n) \approx \frac{1}{\sqrt{2\pi \sigma^2}} \exp \left[ - \frac{(N - np)^2}{2 \s
 where $\sigma^2 = Npq$.
 The probability that the fraction of successes is between 4.5\% and 5.5\% is
 \begin{equation*}
-\text{Probability}(0.045\,N < n < 0.055\,N) = \sum_{n=0.045 \cdot N}^{0.055 \cdot N} P(n) \, .
+K \equiv \text{Probability}(0.045\,N < n < 0.055\,N) = \sum_{n=0.045 \cdot N}^{0.055 \cdot N} P(n) \, .
 \end{equation*}
 I don't think we can do this analytically (although there may be some tricky way to approximate the result).
 Instead, we can evaluate the sum numerically for a few values of $N$ and see where we get, say, 90\% probability.
@@ -32,3 +32,6 @@ A python script \texttt{opinion\_poll.py} for the numerical analysis is included
 
 Note that it's helpful to approximate the distribution as a Gaussian to make the numerics simple.
 Otherwise, we'd have to compute really large factorials.
+
+It would be very nice to have a real analytic treatment of this problem so that we know the functional dependence on $N$.
+From the numerics you can see that the dependence of $K$ on $N$ seems to follow the form $1 - \exp(-N/N_0)$ for some $N_0$.

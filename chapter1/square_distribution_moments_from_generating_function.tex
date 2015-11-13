@@ -1,0 +1,20 @@
+\leveldown{Square distribution moments from generating function - pg. 7}
+
+\leveldown{Problem}
+
+Compute the characteristic function of the square distribution and find its moments that way.
+
+\levelstay{Solution}
+
+The generating function is
+\begin{align*}
+G(k)
+&= \frac{1}{2a} \int_{-a}^a e^{ikx} \, dx \\
+&= \frac{1}{2a} \frac{e^{ika} - e^{-ika}}{ik} \\
+&= \frac{\sin(ak)}{ak} \\
+&= \sum_{n=0}^\infty (-1)^n \frac{1}{ak} \frac{(ak)^{2n+1}}{(2n+1)!} \\
+&= \sum_{n=0}^\infty (-1)^n \frac{a^{2n} (ik)^{2n}}{i^{2n}(2n+1)!} \\
+&= \sum_{n=0}^\infty a^{2n} \frac{(ik)^{2n}}{(2n+1)!} \\
+&= \sum_{n \text{ even}}^\infty \frac{a^n}{n+1} \frac{(ik)^n}{n!} \, .
+\end{align*}
+Therefore, the moments are $\mu_n = a^n / (n+1)$ for even $n$, and zero for odd $n$.

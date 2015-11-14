@@ -1,0 +1,37 @@
+\leveldown{Characteristic of Lortentz distribution}
+
+\leveldown{Problem}
+
+Calculate the characteristic function of the of the Lortentz distribution.
+How does one see from it that the moments do not exist?
+
+\levelstay{Solution}
+
+The Lorentz distribution is
+\begin{equation*}
+P(x) = \frac{1}{\pi} \frac{\gamma}{(x - a)^2 + \gamma^2} \, .
+\end{equation*}
+The characteristic function can be computed directly:
+\begin{align*}
+G(k)
+&= \frac{\gamma}{\pi} \int \frac{e^{i k x}}{(x - a)^2 + \gamma^2} \, dx \\
+&= \frac{\gamma}{\pi} e^{i k a} \int \frac{e^{i k y}}{y^2 + \gamma^2} \, dy \\
+&= \frac{\gamma}{\pi} e^{i k a} \int \frac{e^{i k y}}{(y + i\gamma)(y - i\gamma)} \, dy \, .
+\end{align*}
+Now we use contour integration.
+For $k > 0$ $y$ must have a positive imaginary part in order for the integrand to converge for large $|y|$.
+Therefore, we close the contour in the upper half plane.
+In that case we get
+\begin{equation*}
+G(k > 0) = e^{i k a} e^{-k \gamma} \, .
+\end{equation*}
+For $k<0$ we close the contour in the lower half plane and get
+\begin{equation*}
+G(k < 0) = e^{i k a} e^{k \gamma} \, .
+\end{equation*}
+Therefore, the characteristic function is
+\begin{equation*}
+G(k) = e^{i k a} e^{-|k| \gamma} \, .
+\end{equation*}
+This function is not differentiable at $k=0$, so it has not Taylor series.
+This shows that there are no moments (i.e. they are infinity).

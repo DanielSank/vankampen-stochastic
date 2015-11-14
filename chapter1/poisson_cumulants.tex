@@ -1,0 +1,32 @@
+\leveldown{Poisson cumulants - pg. 7}
+
+\leveldown{Problem}
+
+The \emph{Poisson distribution} is defined on the discrete range $n=0, 1, 2,\ldots$ by
+\begin{equation*}
+p_n = \frac{a^n}{n!}e^{-a} \, .
+\end{equation*}
+Find its cumulants.
+
+\levelstay{Solution}
+
+The Poisson distribution can be written as a continuous distribution using delta functions:
+\begin{equation*}
+p(x) = \sum_{n=0}^\infty \frac{a^n}{n!}e^{-a} \delta(x - n) \, .
+\end{equation*}
+The moment generating function is therefore
+\begin{align*}
+G(k)
+&= \sum_{n=0}^\infty \int \frac{a^n}{n!}e^{-a} \delta(x - n) \, e^{i k x} \, dx \\
+&= \sum_{n=0}^\infty \frac{a^n}{n!}e^{-a} \, e^{i k n} \\
+&= \sum_{n=0}^\infty \frac{(ae^{ik})^n}{n!} e^{-a} \\
+&= \exp \left[ a e^{ik} - a \right] \\
+&= \exp \left[ a (e^{ik} - 1) \right] \\
+\ln G(k)
+&= a (e^{ik} - 1) \\
+&= a \sum_{k=1}^\infty \frac{(ik)^2}{n!} \, .
+\end{align*}
+Therefore, by definition, all of the cumulants of the Poisson distribution are $a$, which is also the mean of the Poisson distribution. It other words,
+\begin{equation*}
+\kappa_1 = \kappa_2 = \kappa_3 = \cdots = \mu_1 \, .
+\end{equation*}

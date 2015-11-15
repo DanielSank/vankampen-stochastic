@@ -1,0 +1,25 @@
+\leveldown{Distribution with $\cos$ generating function}
+
+\leveldown{Problem}
+
+Find the distribution and its moments corresponding to the characteristic function $G(k) = \cos ak$.
+
+\levelstay{Solution}
+
+The distribution is found from the inverse Fourier transform
+\begin{align*}
+P(x)
+&= \int \frac{dk}{2\pi} G(k) e^{-i k x} \\
+&= \frac{1}{2} \int \frac{dk}{2\pi} \left( e^{i a k} + e^{-i a k} \right) e^{-i k x} \\
+&= \frac{1}{2} \int \frac{dk}{2\pi} \left( e^{i a k} + e^{-i a k} \right) e^{-i k x} \\
+&= \frac{1}{2} \left( \delta (x - a) + \delta(x + a) \right) \, .
+\end{align*}
+This is a discrete distribution with probabilities of $1/2$ to get value $\pm a$.
+
+The moments are found by writing $G(k)$ as a Taylor series,
+\begin{align*}
+G(k)
+&= \sum_{n=0}^\infty (-1)^n \frac{(ak)^{2n}}{(2n)!} \\
+&= \sum_{n=0}^\infty a^{2n} \frac{(ik)^{2n}}{(2n)!} \\
+\end{align*}
+This shows that all the odd moments are zero, and the even moments are $\mu_{2n} = a^{2n}$.

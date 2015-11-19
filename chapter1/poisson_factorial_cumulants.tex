@@ -1,0 +1,30 @@
+\leveldown{Factorial cumulants of Poisson distribution}
+
+\leveldown{Problem}
+
+The \emph{factorial cumulants} $\theta_m$ are defined by
+\begin{equation*}
+\log F(1 - x) \sum_{m=1}^\infty \frac{(-x)^m}{m!} \theta_m \, .
+\end{equation*}
+Express the first few in terms of the moments.
+Show that the Poisson distribution is characterized by the vanishing of all factorial cumulants beyond $\theta_1$.
+
+\levelstay{Solution}
+
+I'm skipping writing the cumulants in terms of the moments.
+
+As shown in the previous problem, the factorial moment generating function $F(k)$ is
+\begin{equation*}
+F(k) = \avg{k^x}
+\end{equation*}
+which, with the Poisson distribution, becomes
+\begin{align*}
+F(k)
+&= \sum_{n=0}^n e^{-a} \frac{a^n}{n!} k^n \\
+&= \exp \bracketed{a(k-1)} \\
+(\ln F)(k)
+&= a (k - 1) \\
+(\ln F)(1 - k)
+&= -a k \, .
+\end{align*}
+Therefore, $\theta_1 = a$ and all other factorial cumulants are zero for the Poisson distribution.

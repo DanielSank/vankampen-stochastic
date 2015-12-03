@@ -16,3 +16,59 @@ In the book, the correlation is defined as
 \end{equation*}
 
 \levelstay{Solution}
+
+The Cauchy-Schwarz inequality says that for two vectors $A$ and $B$ in an inner product space,
+\begin{equation*}
+\left\lvert \left \langle A | B \right \rangle \right\vert ^2
+\leq \left\langle A | A \right\rangle \cdot \left\langle B | B \right\rangle \, .
+\end{equation*}
+where here $\left \langle \cdot | \cdot \right \rangle$ means inner product.
+Fortunately, given two variables $X$ and $Y$, the set of functions over those variables is a vector space.
+Also, given a probability distribution $P_{X,Y}$ over those variables, the average \begin{equation*}
+\avg{f g} \equiv \int P_{X,Y}(x, y) f(x, y) \, g(x, y) \, dx \, dy
+\end{equation*}
+is an inner product on that vector space.
+If we define $f(x,y) \equiv x - \avg{X}$ and $g(x,y) \equiv y - \avg{Y}$, then we have
+\begin{align*}
+\left \lvert \braket{f}{g} \right \rvert^2
+= \left \lvert \avg{(X - \avg{X})(Y - \avg{Y})} \right \rvert^2 \, .
+\end{align*}
+Using the Cauchy-Schwarz inequality we get
+\begin{align*}
+\left \lvert \avg{(X - \avg{X})(Y - \avg{Y})} \right \rvert^2
+= \left \lvert \braket{f}{g} \right \rvert^2
+&\leq \braket{f}{f} \braket{g}{g}
+= \avg{(X - \avg{X})^2} \avg{(Y - \avg{Y})^2} \\
+\frac{
+\left \lvert \avg{(X - \avg{X})(Y - \avg{Y})} \right \rvert^2}
+{
+\avg{(X - \avg{X})^2} \avg{(Y - \avg{Y})^2}}
+&\leq 1 \\
+\frac{
+\left \lvert \avg{XY} - \avg{X}\avg{Y} \right \rvert^2}
+{
+\left(\avg{X^2} - \avg{X}^2 \right) \left( \avg{Y^2} - \avg{Y}^2 \right)}
+&\leq 1 \, .
+\end{align*}
+Renaming $X \rightarrow X_i$ and $Y \rightarrow X_j$ we get\
+\begin{equation*}
+\frac{
+\left \lvert \avg{X_i X_j} - \avg{X_i}\avg{X_j} \right \rvert^2}
+{
+\left(\avg{X_i^2} - \avg{X_i}^2 \right) \left( \avg{X_j^2} - \avg{X_j}^2 \right)}
+\leq 1
+\end{equation*}
+which proves the first part of the problem.
+
+I think it's reasonably clear that in order to saturate the inequality of the Cauchy-Schwarz inequality, the two vectors in question have to be parallel, meaning that
+\begin{equation*}
+\ket{f} = a \ket{g}
+\end{equation*}
+for some scalar $a$.
+In the present case, that would mean
+\begin{equation*}
+x - \avg{X} = a (y - \avg{Y}) \longrightarrow x = ay + a \left( \avg{X} - \avg{Y} \right) \, .
+\end{equation*}
+This proves that $x$ and $y$ are linearly related.
+I'm not really sure what this means though.
+To say that $X$ and $Y$ are linearly related seems to be a statement about the probability distribution itself, but I'm not sure yet how to think about what that means.

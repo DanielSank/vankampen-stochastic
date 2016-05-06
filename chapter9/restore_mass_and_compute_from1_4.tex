@@ -1,0 +1,34 @@
+\leveldown{restore mass and compute from 1.4 - pg. 221}
+
+\leveldown{Problem}
+
+Restore the mass M of the Brownian particle in the equations and compute from $(1.4)$ for $t_1>0$, $t_2>0$
+\begin{align*}
+\langle V(t_1)V(t_2) \rangle=\left( V_0^2-\frac{kT}{M}\right)e^{-\gamma (t_1+t_2)}+\frac{kT}{M}e^{-\gamma |t_1-t_2|}
+\end{align*}
+
+
+\levelstay{Solution}
+
+to restore the mass, one has to change expression $(1.7)$ to $\frac{\Gamma}{2\gamma}=\frac{kT}{M}$ and then compute the following integrals, remembering that the mean commutes with the integral hence the linear terms in $L(t)$ go to $0$.
+
+\begin{align*}
+& \langle V(t_1)V(t_2) \rangle=\langle (V_0e^{-\gamma (t_1)}+ e^{-\gamma (t_1)}\int_0^{t1}e^{-\gamma (t')}L(t')dt') \\
+& (V_0e^{-\gamma (t_2)} + e^{-\gamma (t_2)}\int_0^{t2}e^{-\gamma (t'')}L(t'')dt'') \rangle \\
+& =V_0^2e^{-\gamma (t_1+t_2)}+\langle (e^{-\gamma (t_1)}\int_0^{t1}e^{-\gamma (t')}L(t')dt')(e^{-\gamma (t_2)}\int_0^{t2}e^{-\gamma (t'')}L(t'')dt'')) \rangle \\
+& =V_0^2e^{-\gamma (t_1+t_2)}+e^{-\gamma (t_1+t_2)}\int_0^{t1}\int_0^{t2}e^{-\gamma (t')}e^{-\gamma (t'')}\Gamma \delta(t'-t'')dt'dt''
+\end{align*}
+now there are two cases to consider : $(1)$ $t_1>t_2 \leftrightarrow t_1-t_2>0$ and $(2)$ $t_2>t_1 \leftrightarrow t_1-t_2<0$. For $(1)$ we must integrate first over $t'$ from $0$ to $t_1$ and then over $t_2$ from $0$ to $t_2$ getting
+\begin{align*}
+& \langle V(t_1)V(t_2) \rangle=V_0^2e^{-\gamma (t_1+t_2)}+ \frac{kT}{M}[e^{2\gamma t''}]_0^{t_2} \\
+& =\left( V_0^2-\frac{kT}{M}\right)e^{-\gamma (t_1+t_2)}+\frac{kT}{M}e^{-\gamma (t_1-t_2)}
+\end{align*}
+now for $(2)$ one must do the opposite hence getting
+\begin{align*}
+& \langle V(t_1)V(t_2) \rangle=V_0^2e^{-\gamma (t_1+t_2)}+ \frac{kT}{M}[e^{2\gamma t'}]_0^{t_1} \\
+& =\left( V_0^2-\frac{kT}{M}\right)e^{-\gamma (t_1+t_2)}+\frac{kT}{M}e^{-\gamma (t_2-t_1)}
+\end{align*}
+And so one can see that we indeed have
+\begin{align*}
+\langle V(t_1)V(t_2) \rangle=\left( V_0^2-\frac{kT}{M}\right)e^{-\gamma (t_1+t_2)}+\frac{kT}{M}e^{-\gamma |t_1-t_2|}
+\end{align*}

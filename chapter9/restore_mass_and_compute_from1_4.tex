@@ -1,0 +1,37 @@
+\leveldown{restore mass and compute from 1.4 - pg. 221}
+
+\leveldown{Problem}
+
+Restore the mass $M$ of the Brownian particle in the equations and compute from $(1.4)$ for $t_1 > 0$, $t_2 > 0$
+\begin{equation*}
+\avg{V(t_1)V(t_2)} = \left( V_0^2 - \frac{kT}{M} \right) e^{-\gamma (t_1 + t_2)} + \frac{kT}{M} e^{-\gamma |t_1-t_2|} \, .
+\end{equation*}
+
+
+\levelstay{Solution}
+
+To restore the mass, one has to change expression $(1.7)$ to $\frac{\Gamma}{2\gamma}=\frac{kT}{M}$ and then compute the following integrals, remembering that the mean commutes with the integral hence the linear terms in $L(t)$ go to $0$.
+
+\begin{align*}
+\avg{V(t_1)V(t_2)} =& \avg{
+\left( V_0 e^{-\gamma t_1}+ e^{-\gamma t_1} \int_0^{t_1} e^{-\gamma (t')}L(t')dt' \right) 
+\left( V_0 e^{-\gamma t_2} + e^{-\gamma t_2} \int_0^{t_2} e^{-\gamma t''} L(t'')dt'' \right) } \\
+= & V_0^2 e^{-\gamma (t_1 + t_2)} + \avg{ \left( e^{-\gamma t_1} \int_0^{t_1} e^{-\gamma t'} L(t')dt' \right) \left( e^{-\gamma (t_2)} \int_0^{t_2} e^{-\gamma (t'')} L(t'')dt'' \right) } \\
+= & V_0^2 e^{-\gamma (t_1+t_2)} + e^{-\gamma (t_1+t_2)} \int_0^{t_1} \int_0^{t_2} e^{-\gamma (t')} e^{-\gamma (t'')} \Gamma \delta(t'-t'') \, dt'dt'' \, .
+\end{align*}
+Now there are two cases to consider: $(1)$ $t_1>t_2 \leftrightarrow t_1-t_2>0$ and $(2)$ $t_2>t_1 \leftrightarrow t_1-t_2<0$.
+For $(1)$ we must integrate first over $t'$ from $0$ to $t_1$ and then over $t_2$ from $0$ to $t_2$ getting
+\begin{align*}
+\avg{ V(t_1)V(t_2) } =& V_0^2 e^{-\gamma (t_1+t_2)} + \frac{kT}{M} \left[ e^{2\gamma t''} \right]_0^{t_2} \\
+=& \left( V_0^2 - \frac{kT}{M} \right) e^{-\gamma (t_1+t_2)} + \frac{kT}{M} e^{-\gamma (t_1-t_2)} \, .
+\end{align*}
+Now for $(2)$ one must do the opposite hence getting
+\begin{align*}
+\avg{V(t_1)V(t_2)}
+=& V_0^2 e^{-\gamma (t_1+t_2)} + \frac{kT}{M} \left[ e^{2\gamma t'} \right]_0^{t_1} \\
+=& \left( V_0^2 - \frac{kT}{M} \right) e^{-\gamma (t_1+t_2)} + \frac{kT}{M} e^{-\gamma (t_2-t_1)} \, .
+\end{align*}
+Therefore, one can see that we indeed have
+\begin{equation*}
+\avg{ V(t_1)V(t_2) } = \left( V_0^2 - \frac{kT}{M} \right) e^{-\gamma (t_1 + t_2)} + \frac{kT}{M} e^{-\gamma |t_1-t_2|} \, .
+\end{equation*}

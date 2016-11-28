@@ -1,0 +1,3 @@
+(from the third edition) Equation 2.3 in page 137 should read
+
+$F(z,t)=\sum_{n=-\infty}^{+\infty} z^n p_n (t)$

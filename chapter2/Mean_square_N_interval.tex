@@ -1,0 +1,55 @@
+\leveldown{Mean square of N in given interval - pg. 32}
+
+\leveldown{Problem}
+
+Show that the mean square of N (number of dots) is given by the expression (1.7) in the book
+
+\levelstay{Solution}
+The number N of dots occurring in time follows the sequence
+\begin{equation}
+N \rightarrow \{0,\chi(\tau_1),\chi(\tau_1)+\chi(\tau_2),\chi(\tau_1)+\chi(\tau_1)+\chi(\tau_3),...\}
+\end{equation}
+therefore
+\begin{equation}
+\langle N^2\rangle=\langle \left[\sum_{\sigma=1}^s \chi(\tau_{\sigma})\right]^2\rangle=\sum_{s=1}^{\infty}\frac{1}{s!}\int_{-\infty}^{\infty}\left[\sum_{\sigma=1}^s \chi(\tau_{\sigma})\right]^2Q_s(\tau_1,\tau_2,...,\tau_s)d\tau_1d\tau_2...d\tau_s
+\end{equation}
+the squared sum can be split up as
+\begin{equation}
+\begin{split}
+&\left[ \sum_{\sigma=1}^s \chi(\tau_{\sigma}) \right]^2=\sum_{\sigma=1}^1 \chi^2(\tau_{\sigma})+2\chi(\tau_{1})\chi(\tau_{2})+...+2\chi(\tau_{1})\chi(\tau_{s})\\
+&+2\chi(\tau_{2})\chi(\tau_{3})+...+2\chi(\tau_{2})\chi(\tau_{2})+...+2\chi(\tau_{s-1})\chi(\tau_{s})
+\end{split}
+\end{equation}
+thus the s-fold integral has two kinds of terms
+\begin{equation}
+\begin{split}
+&(a)\quad \int_{-\infty}^{\infty}\chi^2(\tau_i)Q_s(\tau_1,\tau_2,...,\tau_i,...,\tau_s)d\tau_1d\tau_2...d\tau_s\\
+&(b) \quad \int_{-\infty}^{\infty}\chi(\tau_i)\chi(\tau_j)Q_s(\tau_1,\tau_2,...,\tau_s)d\tau_1d\tau_2...d\tau_s 
+\end{split}
+\end{equation}
+Using the symmetry properties of $Q_s$ one can transform these expressions. For $(a)$ we have
+\begin{equation}
+\begin{split}
+& \int_{-\infty}^{\infty}\chi^2(\tau_i)Q_s(\tau_1,\tau_2,...,\tau_i,...,\tau_s)d\tau_1d\tau_2...d\tau_s\\
+& \Leftrightarrow \int_{-\infty}^{\infty}\chi^2(\tau_i)Q_s(\tau_i,\tau_2,...,\tau_1,...,\tau_s)d\tau_1d\tau_2...d\tau_s \\
+& \Leftrightarrow \int_{-\infty}^{\infty}\chi^2(\tau_1)Q_s(\tau_1,\tau_2,...,\tau_i,...,\tau_s)d\tau_id\tau_2...d\tau_1...d\tau_s \\
+& \Leftrightarrow\int_{t_a}^{t_b}\left[d\tau_1 \int_{-\infty}^{\infty}Q_s(\tau_1,...,\tau_s)d\tau_2...d\tau_s \right]
+\end{split}
+\end{equation}
+in the same fashion we can transform the expression $(b)$ getting the following result
+\begin{equation}
+\begin{split}
+& \int_{-\infty}^{\infty}\chi(\tau_i)\chi(\tau_j)Q_s(\tau_1,\tau_2,...,\tau_s)d\tau_1d\tau_2...d\tau_s \\
+& \Leftrightarrow \int_{t_a}^{t_b}\left[d\tau_1\int_{t_a}^{t_b}d\tau_2\int_{-\infty}^{\infty}Q_s(\tau_1,\tau_2,...,\tau_s)d\tau_3...d\tau_s\right] \\
+\end{split}
+\end{equation}
+in the end we can rewrite $\langle N^2 \rangle$
+\begin{equation}
+\begin{split}
+&\langle N^2 \rangle=\sum_{s=1}^{\infty}\frac{1}{s!}\{s\int_{t_a}^{t_b}\left[d\tau_1 \int_{-\infty}^{\infty}Q_s(\tau_1,...,\tau_s)d\tau_2...d\tau_s\right] \\
+& +(s-1)s\int_{t_a}^{t_b}\left[d\tau_1\int_{t_a}^{t_b}d\tau_2\int_{-\infty}^{\infty}Q_s(\tau_1,\tau_2,...,\tau_s)d\tau_3...d\tau_s\right] \} \\
+&\Leftrightarrow \langle N^2 \rangle=\sum_{s=1}^{\infty}\frac{1}{(s-1)!}\int_{t_a}^{t_b}\left[d\tau_1 \int_{-\infty}^{\infty}Q_s(\tau_1,...,\tau_s)d\tau_2...d\tau_s\right]\\
+& +\sum_{s=2}^{\infty}\frac{1}{(s-2)!}\int_{t_a}^{t_b}\left[d\tau_1\int_{t_a}^{t_b}d\tau_2\int_{-\infty}^{\infty}Q_s(\tau_1,\tau_2,...,\tau_s)d\tau_3...d\tau_s\right] \\
+& \Leftrightarrow \langle N^2 \rangle=\langle N \rangle+\sum_{s=2}^{\infty}\frac{1}{(s-2)!}\int_{t_a}^{t_b}\left[d\tau_1\int_{t_a}^{t_b}d\tau_2\int_{-\infty}^{\infty}Q_s(\tau_1,\tau_2,...,\tau_s)d\tau_3...d\tau_s\right] \\
+\end{split}
+\end{equation}

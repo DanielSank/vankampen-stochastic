@@ -18,7 +18,7 @@ P(n) = p^n q^{N-n} \frac{N!}{n! (N-n)!} \, .
 \end{equation*}
 It's a reasonably well known result that if $N$ is big enough, $P(n)$ is well approximated as\footnote{Use Stirling's approximation to prove this.}
 \begin{equation*}
-P(n) \approx \frac{1}{\sqrt{2\pi \sigma^2}} \exp \left[ - \frac{(N - np)^2}{2 \sigma^2}\right]
+P(n) \approx \frac{1}{\sqrt{2\pi \sigma^2}} \exp \left[ - \frac{(n - Np)^2}{2 \sigma^2}\right]
 \end{equation*}
 where $\sigma^2 = Npq$.
 The probability that the fraction of successes is between 4.5\% and 5.5\% is

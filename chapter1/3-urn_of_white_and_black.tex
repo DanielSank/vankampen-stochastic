@@ -11,3 +11,15 @@ P(n) = \binom{N_1}{n} \binom{N_2}{M-n} / \binom{N_1 + N_2}{M} \, . \qquad \text{
 This reduces to the volumes equation in the limit $N_1, N_2 \rightarrow \infty$ with $N_1/N_2 = \gamma$.
 
 \levelstay{Solution}
+Two central assumptions: 
+\begin{enumerate}
+\item Every outcome that leads to $M$ balls picked is equally probable.
+\item The balls are indistinguishable except for their colors --- i.e. black and white.
+\end{enumerate}
+With the above, we can derive the hypergeometric distribution for the given set up. Alternatively, since the distribution is already given, we can try to understand the meaning of each term instead.
+
+First of all, there are $\binom{N_1}{n}$ ways of selecting $n$ white balls from $N_1$ ones; the binomial coefficient is applicable, because we are selecting indistinguishable objects without replacement. Similarly for the black balls: $\binom{N_2}{M-n}$. Multiplying the two binomial coefficients gives us the amount of `desirable' outcomes. 
+
+Then, we note that there are $\binom{N_{1} + N_{2}}{M}$ ways of picking $M$ balls from a total of $N_{1} + N_{2}$. This is the `total' amount of outcomes possible in the present set up. Dividing the `desirable'  by the `total' gives us the probability distribution!
+
+If there is any confusion, try the following \emph{brute-force} approach. Imagine a \emph{particular} experiment where we extracted the balls one by one and obtained the desired black/white mix; for concreteness, say we first found $n$ white balls followed by $M-n$ black balls. (Yes, we somehow can decide the color ourselves!) Calculate the probability for this specific outcome, and then note that any other outcome is equally probable. Therefore, multiplying the probability we just got by the number of `desirable' outcomes --- $\binom{N_1}{n} \binom{N_2}{M-n} $ --- leads to the final result.

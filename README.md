@@ -8,7 +8,7 @@ To contribute, solve a problem from the book and file a pull request against thi
 See existing problems and solutions for expected format (we use Tex).
 To easily find outstanding problems, search the issues for the "open problem" tag.
 Open problem issues contain a link to a stub giving the complete problem.
-See [issue 1](https://github.com/DanielSank/vankampen-stochastic/issues/1) as an example.
+See [issue 1] (https://github.com/DanielSank/vankampen-stochastic/issues/1) as an example.
 
 ### View the work
 

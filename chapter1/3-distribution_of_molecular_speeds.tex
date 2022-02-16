@@ -6,3 +6,9 @@ Let $X$ stand for the three components of the velocity of a molecule in a gas.
 Give its range and probability distribution.
 
 \levelstay{Solution}
+
+The absolute value of the velocity $|X| := \sqrt{X_1^2 + X_2^2 + X_3^2}$ cannot be greater than the speed of light $c$, hence the range in spherical coordinates is a cartesian product of $[0, c) \times [0, 2 \pi) \times [0 , \pi]$. Jacobian from cartesian coordinates to spherical is $J = r^2 \sin{\theta}$. The probability\footnote{Considering we started off with uniform distribution in cartesian coordinates.} is therefore
+
+\begin{equation*}
+    f_{X(r, \theta, \phi)}(r, \theta, \phi) = f_{X(x, y ,z)}(r, \theta, \phi) \cdot |J (r, \theta, \phi)| = \frac{3}{4 \pi c^3} r^2 \sin{\theta}
+\end{equation*}

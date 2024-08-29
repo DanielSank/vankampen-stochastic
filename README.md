@@ -21,3 +21,23 @@ To view the work, run LaTeX on main.tex.
 * **new solution (use for pull requests):** You've solved and written up a problem and want to get it merged in.
 * **open problem:** Points to an as-yet unsolved problem.
 * **question:** You have a question about stochastic processes (e.g. a math or physics question), or how this repo works.
+
+### Style guide
+* File layout
+  * One file per exercise.
+  * Filename should follow the pattern
+    ```
+    {page number}-description_of_exercise.tex`
+    ```
+  * The first line of each file should be
+    ```
+    \leveldown{Description of Exercise - pg. XX}`
+    ```
+* Start each sentence on a new line.
+* Indent environments with two spaces, e.g.
+    ```
+    \begin{equation}
+      f(x) = x^2 \, .
+    \end{equation}
+    ```
+* If a sentence ends with an equation, put `\, .` at the end of that equation (see above).

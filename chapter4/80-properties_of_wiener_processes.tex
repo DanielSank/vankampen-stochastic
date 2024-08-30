@@ -4,66 +4,63 @@
 
 From pg 80, prove for the Wiener process that
 \begin{equation*}
-\avg{Y(t_1) Y(t_2)} = \min(t_1, t_2)
+  \avg{Y(t_1) Y(t_2)} = \min(t_1, t_2)
 \end{equation*}
-
+and
 \begin{equation*}
-\avg{ \big( Y(t_1) - Y(t_2) \big)  \big( Y(t_3) - Y(t_4) \big) } = \big( t_1, t_2 \big) \cap \big( t_3, t_4 \big)
+  \avg{ \big( Y(t_1) - Y(t_2) \big)  \big( Y(t_3) - Y(t_4) \big) } = \big( t_1, t_2 \big) \cap \big( t_3, t_4 \big)
 \end{equation*}
-
-These are equations $(2.7a)$ and $(2.7b)$ in the textbook, respectively.
+which are equations $(2.7a)$ and $(2.7b)$ in the textbook, respectively.
 
 \levelstay{Solution}
 
-Let $t_1 < t_2$. Then the joint density of $Y (t_1)$ and  $Y (t_2)$ is 
-
+Let $t_1 < t_2$.
+Then the joint density of $Y (t_1)$ and  $Y (t_2)$ is
 \begin{equation*}
-f_{Y (t_1)Y(t_2)} = p(t_1, 0, x)p(t_2 - t_1, x, y)dxdy
+  f_{Y (t_1)Y(t_2)} = p(t_1, 0, x)p(t_2 - t_1, x, y) \, dx \, dy
 \end{equation*}
-for their respective probability distributions. Then, 
-
+and
 \begin{align*}
-\avg{Y(t_1)Y(t_2)} =& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x y p(t_1, 0, x)p(t_2 - t_1, x, y)dxdy \\
-= & \int_{-\infty}^{\infty} x p(t_1, 0, x) \bigg( \int_{-\infty}^{\infty} y p(t_2 - t_1, x, y)dy \bigg) dx\\
-= & \int_{-\infty}^{\infty} x p(t_1, 0, x) \bigg( \int_{-\infty}^{\infty} y p(t_2 - t_1, x, y)dy \bigg) dx .
+  \avg{Y(t_1)Y(t_2)}
+  =& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x y p(t_1, 0, x) p(t_2 - t_1, x, y) dx \, dy \\
+  = & \int_{-\infty}^{\infty} x p(t_1, 0, x) \left( \int_{-\infty}^{\infty} y p(t_2 - t_1, x, y)dy \right) dx
+  \, .
 \end{align*}
-
-where in the last step we have used Fubini's/Tonelli's theorem. 
-
-The integral in brackets is given by: 
-
+where in the last step we have used Fubini's/Tonelli's theorem.
+The integral in brackets is
 \begin{align*}
-\int_{-\infty}^{\infty} y p(t_2 - t_1, x, y)dy =& \int_{-\infty}^{\infty} (x + u) p(t_2 - t_1, x, x + u)du \\
-= & \int_{-\infty}^{\infty} (x + u) p(t_2 - t_1, 0, u)du \\
-= & x \underbrace{ \int_{-\infty}^{\infty} p(t_2 - t_1, 0, u)du }_1 + \int_{-\infty}^{\infty} u p(t_2 - t_1, 0, u)du \\
-= & x + 0 .
+\int_{-\infty}^{\infty} y p(t_2 - t_1, x, y)dy
+  = & \int_{-\infty}^{\infty} (x + u) p(t_2 - t_1, x, x + u)du \\
+  = & \int_{-\infty}^{\infty} (x + u) p(t_2 - t_1, 0, u)du \\
+  = & x \underbrace{ \int_{-\infty}^{\infty} p(t_2 - t_1, 0, u)du }_1 + \int_{-\infty}^{\infty} u p(t_2 - t_1, 0, u)du \\
+  = & x + 0
+  \, .
 \end{align*}
-
-where in the first line we have used the substitution $y = x + u$ so that $dy = du$ and in the second line we have used the fact that length of an interval is invariant under shifts, e.g. for some real number $x$, the length of interval, given by $length(\big[a, b \big]) = b - a$, for the interval $ \big[x, x + u  \big] $ is $(x + u) - x = u$ which is the same length as the interval $ \big[0, u  \big] $ (which has length $(u - 0) = u$ ). So in the second-last line, the first integral is $x$ while the second integral is $0$.
-
-Putting this into our new equation gives 
-
+where in the first line we have used the substitution $y = x + u$ so that $dy = du$ and in the second line we have used the fact that length of an interval is invariant under shifts.
+In particular, the length of interval $\left[x, x + u  \right]$ is $(x + u) - x = u$, which is the same length as the interval $ \left[ 0, u \right] $ (which has length $(u - 0) = u$).
+So in the second-last line, the first integral is $x$ while the second integral is $0$.
+Putting this into our new equation gives
 \begin{align*}
-\int_{-\infty}^{\infty} x p(t_1, 0, x) \underbrace{ \bigg( \int_{-\infty}^{\infty} y p(t_2 - t_1, x, y)dy \bigg) }_x dx =& \int_{-\infty}^{\infty} x p(t_1, 0, x) \big( x \big) dx \\
-= & \int_{-\infty}^{\infty} x^2 p(t_1, 0, x) dx\\
-= & t_1 .
+\int_{-\infty}^{\infty} x p(t_1, 0, x) \underbrace{ \bigg( \int_{-\infty}^{\infty} y p(t_2 - t_1, x, y)dy \bigg) }_x dx
+  = & \int_{-\infty}^{\infty} x p(t_1, 0, x) \big( x \big) dx \\
+  = & \int_{-\infty}^{\infty} x^2 p(t_1, 0, x) dx\\
+  = & t_1
+  \, .
 \end{align*}
-
 because the integral in the second line is the expectation integral for the Wiener process which just gives $t_1$.
-
-Therefore for arbitrary $t_2$ and $t_1$, 
-
+Therefore for arbitrary $t_2$ and $t_1$
 \begin{equation*}
-\avg{Y(t_1)Y(t_2)} = \min(t_1, t_2)
+  \avg{Y(t_1)Y(t_2)} = \min(t_1, t_2)
+  \, .
 \end{equation*}
 
-Now we have for the second part, 
-
+Now we have for the second part
 \begin{align*}
-\avg{ \big( Y(t_1) - Y(t_2) \big)  \big( Y(t_3) - Y(t_4) \big) } =& \avg{ Y(t_1)Y(t_3) - Y(t_1)Y(t_4) - Y(t_2)Y(t_3) + Y(t_2)Y(t_4) } \\
-= & \avg{Y(t_1)Y(t_3) } - \avg{Y(t_1)Y(t_4)} - \avg{Y(t_2)Y(t_3)} + \avg{ Y(t_2)Y(t_4)}  \\
-= & \min{(t_1,t_3)} - \min{(t_1,t_4)} - \min{(t_2,t_3)} + \min{(t_1,t_3)}  \\
-= & \big( t_1, t_2 \big) \cap \big( t_3, t_4 \big)
+  \avg{ \big( Y(t_1) - Y(t_2) \big)  \big( Y(t_3) - Y(t_4) \big) }
+  = & \avg{ Y(t_1)Y(t_3) - Y(t_1)Y(t_4) - Y(t_2)Y(t_3) + Y(t_2)Y(t_4) } \\
+  = & \avg{Y(t_1)Y(t_3) } - \avg{Y(t_1)Y(t_4)} - \avg{Y(t_2)Y(t_3)} + \avg{ Y(t_2)Y(t_4)}  \\
+  = & \min{(t_1,t_3)} - \min{(t_1,t_4)} - \min{(t_2,t_3)} + \min{(t_1,t_3)}  \\
+  = & \big( t_1, t_2 \big) \cap \big( t_3, t_4 \big)
+  \, .
 \end{align*}
-
-where in the second line we have used the linearity of the expectation (i.e. $\avg{ X - Y } = \avg{X} - \avg{Y}$ for random variables X and Y (i.i.d))  and in the third line we have applied the first part of this question to each expectation separately. 
+where in the second line we have used the linearity of the expectation (i.e. $\avg{ X - Y } = \avg{X} - \avg{Y}$ for random variables X and Y (i.i.d)) and in the third line we have applied the first part of this question to each expectation separately.

@@ -4,39 +4,41 @@
 
 Find the factorial moments and cumulants of
 \begin{equation*}
-p_n = (1 + \gamma)^{-N} \gamma^n \frac{N!}{n!(N-n)!} \, .
+  p_n = (1 + \gamma)^{-N} \gamma^n \frac{N!}{n!(N-n)!}
+  \, .
 \end{equation*}
 
 \levelstay{Solution}
 
 The moment generating function is
 \begin{align*}
-F(k)
-&= \avg{k^x} \\
-&= \sum_{n=0}^N (1 + \gamma)^{-N} \gamma^n \frac{N!}{n!(N-n)!} k^n \\
-&= (1 + \gamma)^{-N} (1 + \gamma k)^N \, .
+  F(k)
+  &= \avg{k^x} \\
+  &= \sum_{n=0}^N (1 + \gamma)^{-N} \gamma^n \frac{N!}{n!(N-n)!} k^n \\
+  &= (1 + \gamma)^{-N} (1 + \gamma k)^N \, .
 \end{align*}
 The moments come by differentiating $F$ and evaluating at $k=1$,
 \begin{align*}
-(D^m F)(k)
-&= (1 + \gamma)^{-N} \frac{N!}{(N-m)!} \gamma^m (1 + \gamma k)^{N-m} \\
-(D^m F)(k=1)
-&= \frac{N!}{(N-m)!} \left(1 + \frac{1}{\gamma} \right)^{-m} \\
-(\gamma \ll 1) \qquad
-&\approx \frac{N!}{(N - m)!} \gamma^m \, .
+  (D^m F)(k)
+  &= (1 + \gamma)^{-N} \frac{N!}{(N-m)!} \gamma^m (1 + \gamma k)^{N-m} \\
+  (D^m F)(k=1)
+  &= \frac{N!}{(N-m)!} \left(1 + \frac{1}{\gamma} \right)^{-m} \\
+  (\gamma \ll 1) \qquad
+  &\approx \frac{N!}{(N - m)!} \gamma^m \, .
 \end{align*}
 
 For the cumulants, we take the log:
 \begin{align*}
-(\ln F)(k)
-&= N \left[ \ln(1 + \gamma k) - \ln(1 + \gamma) \right] \\
-(D^m \ln F)(k)
-&=  (-1)^{m+1} N(m-1)! \gamma^m (1 + \gamma k)^{-m} \\
-(D^m \ln F)(k=1)
-&=  (-1)^{m-1} N(m-1)! \left( 1 + \frac{1}{\gamma} \right)^{-m} \, .
+  (\ln F)(k)
+  &= N \left[ \ln(1 + \gamma k) - \ln(1 + \gamma) \right] \\
+  (D^m \ln F)(k)
+  &=  (-1)^{m+1} N(m-1)! \gamma^m (1 + \gamma k)^{-m} \\
+  (D^m \ln F)(k=1)
+  &=  (-1)^{m-1} N(m-1)! \left( 1 + \frac{1}{\gamma} \right)^{-m} \, .
 \end{align*}
 Therefore, the factorial cumulants are
 \begin{equation*}
-\theta_m = N (-1)^{m-1} (m-1)! \left( 1 + \frac{1}{\gamma} \right)^{-m} \qquad (m \geq 1) \, .
+  \theta_m = N (-1)^{m-1} (m-1)! \left( 1 + \frac{1}{\gamma} \right)^{-m} \qquad (m \geq 1)
+  \, .
 \end{equation*}
 I'm not sure what the point of this problem is.

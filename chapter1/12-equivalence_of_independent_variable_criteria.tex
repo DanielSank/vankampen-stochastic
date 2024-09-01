@@ -6,12 +6,12 @@ Prove the three criteria for independence mentioned above and generalize them to
 
 The criteria given in the book are
 \begin{itemize}
-\item All moments factorize: $\avg{X_1^{m_1} X_2^{m_2}} = \avg{X_1^{m_1}} \avg{X_2^{m_2}}$.
-\item The characteristic function factorizes:
-\begin{equation*}
-G(k_1, k_2) = G_1(k_1)G_2(k_2) \, .
-\end{equation*}
-\item The cumulants $\avg{\avg{X_1^{m_1} X_2^{m_2}}}$ vanish when both $m_1$ and $m_2$ are not zero.
+  \item All moments factorize: $\avg{X_1^{m_1} X_2^{m_2}} = \avg{X_1^{m_1}} \avg{X_2^{m_2}}$.
+  \item The characteristic function factorizes:
+    \begin{equation*}
+      G(k_1, k_2) = G_1(k_1)G_2(k_2) \, .
+    \end{equation*}
+  \item The cumulants $\avg{\avg{X_1^{m_1} X_2^{m_2}}}$ vanish when both $m_1$ and $m_2$ are not zero.
 \end{itemize}
 
 \levelstay{Solution}
@@ -19,10 +19,10 @@ G(k_1, k_2) = G_1(k_1)G_2(k_2) \, .
 First, we show that if the variables are independent, the moments factorize.
 We just crank through the math:
 \begin{align*}
-\avg{X_1^{m_1} X_2^{m_2}}
-&= \int_{X_1,X_2} P_{X_1, X_2}(x_1, x_2) x_1^{m_1} x_2^{m_2} \, dx_1 \, dx_2 \\
-&= \int_{X_1} P_{X_1}(x_1) x_1^{m_1} \, dx_1 \int_{X_2} P_{X_2}(x_2) x_2^{m_2} \, dx_2 \\
-&= \avg{X_1^{m_1}} \avg{X_2^{m_2}} \, .
+  \avg{X_1^{m_1} X_2^{m_2}}
+  &= \int_{X_1,X_2} P_{X_1, X_2}(x_1, x_2) x_1^{m_1} x_2^{m_2} \, dx_1 \, dx_2 \\
+  &= \int_{X_1} P_{X_1}(x_1) x_1^{m_1} \, dx_1 \int_{X_2} P_{X_2}(x_2) x_2^{m_2} \, dx_2 \\
+  &= \avg{X_1^{m_1}} \avg{X_2^{m_2}} \, .
 \end{align*}
 This proves that if two variables are independent, the moments factorize.
 The extension to more variables is obvious.
@@ -30,20 +30,20 @@ The extension to more variables is obvious.
 Next, we show that if the moments factorize, then the characteristic function factorizes.
 Again, we just use math:
 \begin{align*}
-G(k_1, k_2)
-&= \sum_0^{\infty} \frac{(ik_1)^{m_1} (ik_2)^{m_2}}{m_1! m_2!} \avg{X_1^{m_1} X_2^{m_2}} \\
-&=
-\sum_0^{\infty} \frac{(ik_1)^{m_1}}{m_1!} \avg{X_1^{m_1}}
-\sum_0^{\infty} \frac{(ik_2)^{m_2}}{m_2!} \avg{X_2^{m_2}} \\
-&= G_1(k_1) G_2(k_2) \, .
+  G(k_1, k_2)
+  &= \sum_0^{\infty} \frac{(ik_1)^{m_1} (ik_2)^{m_2}}{m_1! m_2!} \avg{X_1^{m_1} X_2^{m_2}} \\
+  &=
+    \sum_0^{\infty} \frac{(ik_1)^{m_1}}{m_1!} \avg{X_1^{m_1}}
+    \sum_0^{\infty} \frac{(ik_2)^{m_2}}{m_2!} \avg{X_2^{m_2}} \\
+  &= G_1(k_1) G_2(k_2) \, .
 \end{align*}
 Again, the extension to multiple variables is obvious.
 
 Next, we show that if the generating function factorizes, then the cumulants $\avg{\avg{X_1^{m_1} X_2^{m_2}}}$ vanish when both $m_1$ and $m_2$ differ from zero.
 You guessed it, just do math:
 \begin{equation*}
-\log G(k_1, k_2)
-= \log G_1(k_1) + \log G_2(k_2) \, .
+  \log G(k_1, k_2)
+  = \log G_1(k_1) + \log G_2(k_2) \, .
 \end{equation*}
 The Taylor series for this function obviously has no cross terms, which means the cumulants with more than one variable having a non-zero power vanish.
 
@@ -52,12 +52,13 @@ If we can prove that, then we'll have completed a circle of implications showing
 
 If the cumulants vanish when more than one of the powers is nonzero, then we can write
 \begin{align*}
-\log G(k_1, \ldots , k_n)
-&= \sum_{j=0}^\infty \frac{(ik_1)^j}{j!} + \cdots + \sum_{j=0}^\infty \frac{(ik_n)^j}{j!} \\
-G(k_1, \ldots , k_n)
-&= \prod_{m=1}^n \exp \left[ \sum_{j=0}^\infty \frac{(ik_m)^j}{j!} \right] \\
-&\equiv \prod_{m=1}^n G_m(k_m) \\
-P_{X_1,\ldots,X_n}(x_1,\ldots,x_n)
-&= \prod_{m=1}^n \int G_m(k_m) e^{-i k_m x_m} \frac{dk_m}{2\pi} \\
-&= \prod_{m=1}^n P_{X_m}(x_m) \, .
+  \log G(k_1, \ldots , k_n)
+  &= \sum_{j=0}^\infty \frac{(ik_1)^j}{j!} + \cdots + \sum_{j=0}^\infty \frac{(ik_n)^j}{j!} \\
+  G(k_1, \ldots , k_n)
+  &= \prod_{m=1}^n \exp \left[ \sum_{j=0}^\infty \frac{(ik_m)^j}{j!} \right] \\
+  &\equiv \prod_{m=1}^n G_m(k_m) \\
+  P_{X_1,\ldots,X_n}(x_1,\ldots,x_n)
+  &= \prod_{m=1}^n \int G_m(k_m) e^{-i k_m x_m} \frac{dk_m}{2\pi} \\
+  &= \prod_{m=1}^n P_{X_m}(x_m)
+  \, .
 \end{align*}

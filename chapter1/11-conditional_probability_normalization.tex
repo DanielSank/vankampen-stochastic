@@ -5,17 +5,17 @@
 Prove and interpret the normalization of the conditional probability
 
 \begin{equation*}
-\int P_{A|B}(a, b) da = 1 \, .
+  \int P_{A|B}(a, b) da = 1 \, .
 \end{equation*}
 
 \levelstay{Solution}
 
 Use Bayes's rule:
 \begin{align*}
-\int P_{A|B}(a, b) da
-&= \frac{1}{P_B(b)} \int P_{A,B}(a, b) \, da \\
-&= \frac{P_B(b)}{P_B(b)} \\
-&= 1 \, .
+  \int P_{A|B}(a, b) da
+  &= \frac{1}{P_B(b)} \int P_{A,B}(a, b) \, da \\
+  &= \frac{P_B(b)}{P_B(b)} \\
+  &= 1 \, .
 \end{align*}
-
-The normalization of the conditional probability $P_{A|B}$ can be interpreted as the following English sentences: ``For any value of the variables $B$, the sum of the probabilities for all values of the variables $A$ is one. In other words, after fixing $B$, the remaining variables are still a probability distribution.''
+The normalization of the conditional probability $P_{A|B}$ can be interpreted as the following English sentences: ``For any value of the variables $B$, the sum of the probabilities for all values of the variables $A$ is one.
+In other words, after fixing $B$, the remaining variables are still a probability distribution.''

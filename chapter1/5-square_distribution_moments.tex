@@ -4,20 +4,22 @@
 
 Find the moments of the ``square distribution'' defined by
 \begin{equation*}
-P(x) = 0 \quad \text{for }|x|>a, \qquad P(x)=(2a)^{-1} \quad \text{for }|x|<a \, .
+  P(x) = 0 \quad \text{for }|x|>a, \qquad P(x)=(2a)^{-1} \quad \text{for }|x|<a
+  \, .
 \end{equation*}
 
 \levelstay{Solution}
 
 The moments are
 \begin{align*}
-\mu_n
-&\equiv \frac{1}{2a} \int_{-a}^a x^n \, dx \\
-&= \frac{1}{2a} \left( \int_{-a}^0 x^n \, dx + \int_0^a x^n \, dx \right) \\
-&= \frac{1}{2a}\int_0^a x^n + (-x)^n \, dx \\
-&=
-\left\{ \begin{array}{ll}
-0 & n \text{ odd} \\
-a^n/(n+1) & n \text{ even}
-\end{array} \right.
+  \mu_n
+  &\equiv \frac{1}{2a} \int_{-a}^a x^n \, dx \\
+  &= \frac{1}{2a} \left( \int_{-a}^0 x^n \, dx + \int_0^a x^n \, dx \right) \\
+  &= \frac{1}{2a}\int_0^a x^n + (-x)^n \, dx \\
+  &= \left\{
+    \begin{array}{ll}
+    0 & n \text{ odd} \\
+    a^n/(n+1) & n \text{ even}
+    \end{array}
+  \right.
 \end{align*}

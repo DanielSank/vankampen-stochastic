@@ -6,7 +6,9 @@ An urn contains a mixture of $N_w$ white balls and $N_b$ black ones.
 I extract at random $M$ balls, without putting them back.
 Show that the probability for having $n$ white balls among them is
 \begin{equation*}
-P(n) = \binom{N_w}{n} \binom{N_b}{M-n} / \binom{N_w + N_b}{M} \, . \qquad \text{(``hypergeometric distribution'')}
+  P(n)
+  = \binom{N_w}{n} \binom{N_b}{M-n} / \binom{N_w + N_b}{M}
+  \, . \qquad \text{(``hypergeometric distribution'')}
 \end{equation*}
 This reduces to the volumes equation in the limit $N_w, N_b \rightarrow \infty$ with $N_w/N_b = \gamma$.
 
@@ -16,9 +18,10 @@ We solve the problem by first assuming that the balls are all distinguishable, a
 We will then apply one correction for the fact that the black (white) balls are indistinguishable from each other and another to account for the ordering.
 
 Suppose that the balls, in addition to having color, have some other trait that makes them each completely distinguishable, e.g. they could each be numbered.
-Imagine a particular case where we extract $M$ balls one by one, getting first $n$ white balls and then $k$ black balls:
+Imagine a particular case where we extract $M$ balls one by one, getting first $n$ white balls and then $k$ black balls
 \begin{equation*}
   w_1, w_2, \ldots , w_n , b_1, b_2, \ldots , b_k
+  \, .
 \end{equation*}
 What is the probability of this precise string?
 The probability of drawing ball $w_1$ on the first draw is $N_w / (N_w + N_b)$.

@@ -14,16 +14,17 @@ Each one is either ``success'', meaning the person polled is from the party, or 
 The probability of success is $p$ and the probability of failure is $q = 1 - p$.
 The probability of getting $n$ successes is
 \begin{equation*}
-P(n) = p^n q^{N-n} \frac{N!}{n! (N-n)!} \, .
+  P(n) = p^n q^{N-n} \frac{N!}{n! (N-n)!} \, .
 \end{equation*}
 It's a reasonably well known result that if $N$ is big enough, $P(n)$ is well approximated as\footnote{Use Stirling's approximation to prove this.}
 \begin{equation*}
-P(n) \approx \frac{1}{\sqrt{2\pi \sigma^2}} \exp \left[ - \frac{(n - Np)^2}{2 \sigma^2}\right]
+  P(n) \approx \frac{1}{\sqrt{2\pi \sigma^2}} \exp \left[ - \frac{(n - Np)^2}{2 \sigma^2}\right]
 \end{equation*}
 where $\sigma^2 = Npq$.
 The probability that the fraction of successes is between 4.5\% and 5.5\% is
 \begin{equation*}
-K \equiv \text{Probability}(0.045\,N < n < 0.055\,N) = \sum_{n=0.045 \cdot N}^{0.055 \cdot N} P(n) \, .
+  K \equiv \text{Probability}(0.045\,N < n < 0.055\,N) = \sum_{n=0.045 \cdot N}^{0.055 \cdot N} P(n)
+  \, .
 \end{equation*}
 I don't think we can do this analytically (although there may be some tricky way to approximate the result).
 Instead, we can evaluate the sum numerically for a few values of $N$ and see where we get, say, 90\% probability.

@@ -23,6 +23,7 @@ To view the work, run LaTeX on main.tex.
 * **question:** You have a question about stochastic processes (e.g. a math or physics question), or how this repo works.
 
 ### Style guide
+
 * File layout
   * One file per exercise.
   * Filename should follow the pattern
@@ -41,3 +42,6 @@ To view the work, run LaTeX on main.tex.
     \end{equation}
     ```
 * If a sentence ends with an equation, put `\, .` at the end of that equation (see above).
+* Prefer `\left(` and `\right)` over e.g. `\big )`.
+
+Not all existing exercises in the repo follow this style guide (issue #23 is about fixing that).

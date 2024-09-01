@@ -43,5 +43,6 @@ To view the work, run LaTeX on main.tex.
     ```
 * If a sentence ends with an equation, put `\, .` at the end of that equation (see above).
 * Prefer `\left(` and `\right)` over e.g. `\big )`.
+* Prefer to use the repo's macros, e.g. `\avgang{content}` instead of inlining `\left \lange content \right \rangle`.
 
 Not all existing exercises in the repo follow this style guide (issue #23 is about fixing that).

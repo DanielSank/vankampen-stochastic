@@ -41,7 +41,16 @@ To view the work, run LaTeX on main.tex.
       f(x) = x^2 \, .
     \end{equation}
     ```
-* If a sentence ends with an equation, put `\, .` at the end of that equation (see above).
+* If a sentence ends with an equation, put `\, .` at the end of that equation (see above). For multiline blocks of math, put the `\, .` on its own line:
+    ```
+    \begin{align*}
+      f(x)
+      &= \int_1^\infty \frac{1}{x^2} \, dx \\
+      &= - \frac{1}{x} \bigg \lvert^{\infty}_1 \\
+      &= 1
+      \, .
+    \end{align*}
+    ```
 * Prefer `\left(` and `\right)` over e.g. `\big )`.
 * Prefer to use the repo's macros, e.g. `\avgang{content}` instead of inlining `\left \lange content \right \rangle`.
 

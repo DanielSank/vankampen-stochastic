@@ -1,0 +1,24 @@
+\leveldown{Description of a sequence of random events - pg. 32}
+
+\leveldown{Problem}
+
+Calculate $Q_s$ for the given recipe of construction of a random set of dots
+\levelstay{Solution}
+We need to find a description of a sequence of random events at $\tau_1$, $\tau_2$, ..., in terms of the probability distribution $Q_s$ using the probability $w$. The $w$ probability is the simplest description of correlated random events : the new arrival is dependent on the timing from the previous arrival and both arrivals are governed by the same probability function $w$. We may as well represent this situation by having $s$ replicas of the system and reporting the first random events in each of these systems. Such first event would be governed by a probability $w$. We can write $Q_s$ as a probability of events that are independent of one another in each of these systems.
+\begin{equation}
+Q_s(\tau_1, \tau_2,...,\tau_s)=P(\tau_1)P(\tau_2)...P(\tau_s)
+\end{equation}
+Thus we have
+\begin{equation}
+\begin{split}
+& P(\tau_1)= w(\tau_1) \\
+& P(\tau_2)= \int_{0}^{\tau_2}w(\tau_2-\tau_1)d\tau_1\\
+& P(\tau_3)=  \int_{0}^{\tau_3}w(\tau_3-\tau_2)d\tau_2\\
+& ... \\
+& P(\tau_s)=  \int_{0}^{\tau_s}w(\tau_s-\tau_{s-1})d\tau_{s-1}\\
+\end{split}
+\end{equation}
+Finally
+\begin{equation}
+Q_s(\tau_1, \tau_2,...,\tau_s)=w(\tau_1)\int_{0}^{\tau_2}w(\tau_2-\tau_1)d\tau_1...\int_{0}^{\tau_s}w(\tau_s-\tau_{s-1})d\tau_{s-1}
+\end{equation}

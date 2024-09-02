@@ -52,6 +52,10 @@ To view the work, run LaTeX on main.tex.
     \end{align*}
     ```
 * Prefer `\left(` and `\right)` over e.g. `\big )`.
+* Use the `align` environment for multiline math.
+* Write inline fractions like this: `1/2`.
+* Do not use `\frac` inside a superscript. If you have a lot going on inside e.g. an exponential, use
+    ```
+    \exp \left( stuff \right)
+    ```
 * Prefer to use the repo's macros, e.g. `\avgang{content}` instead of inlining `\left \lange content \right \rangle`.
-
-Not all existing exercises in the repo follow this style guide (issue #23 is about fixing that).

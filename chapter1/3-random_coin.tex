@@ -5,9 +5,10 @@
 Flip a coint $N$ times.
 Prove that the probability that heads turn up exactly $n$ times is
 \begin{equation*}
-p_n = 2^{-N} \binom{N}{n} \quad (n=0,1,2,\ldots,N)
+  p_n = 2^{-N} \binom{N}{n} \quad (n=0,1,2,\ldots,N)
 \end{equation*}
-(binomial distribution). If heads gains one penny and tails loses one, find the probability distribution for the total gain.
+which is the binomial distribution.
+If heads gains one penny and tails loses one, find the probability distribution for the total gain.
 
 \levelstay{Solution}
 
@@ -18,19 +19,21 @@ Consider a prototypical string with $n$ heads.
 There are $N!$ ways of arranging \emph{all} the flips.
 However, arranging the heads amongst themselves gives the same string; there are $n!$ such rearrangements.
 Similarly, there are $(N-n)!$ ways of rearranging the tails amongst themselves.
-Therefore, there are 
+Therefore, there are
 \begin{equation*}
-2^{-N} \frac{N!}{n! (N-n)!} = 2^{-N} \binom{N}{n}
+  2^{-N} \frac{N!}{n! (N-n)!} = 2^{-N} \binom{N}{n}
 \end{equation*}
 ways to get $n$ heads.
 
 For the probability distribution of the final random walk position, denote the final gain as $g$, the number of heads as $n$, and the number of tails as $m$.
 We have two equations
 \begin{align*}
-n + m = N \\
-n - m = g \, .
+  n + m = N \\
+  n - m = g
+  \, .
 \end{align*}
 Therefore, $n = (N + g) / 2$ and the probability distribution is
 \begin{equation*}
-P(g | N) = 2^{-N} \frac{N!}{\left( \frac{N+g}{2} \right)! \left( \frac{N-g}{2}\right)!} \, .
+  P(g | N) = 2^{-N} \frac{N!}{\left( \frac{N+g}{2} \right)! \left( \frac{N-g}{2}\right)!}
+  \, .
 \end{equation*}

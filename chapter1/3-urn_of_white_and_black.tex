@@ -1,0 +1,73 @@
+\leveldown{Urn of white and black - pg. 3}
+
+\leveldown{Problem}
+
+An urn contains a mixture of $N_w$ white balls and $N_b$ black ones.
+I extract at random $M$ balls, without putting them back.
+Show that the probability for having $n$ white balls among them is
+\begin{equation*}
+  P(n)
+  = \binom{N_w}{n} \binom{N_b}{M-n} / \binom{N_w + N_b}{M}
+  \, . \qquad \text{(``hypergeometric distribution'')}
+\end{equation*}
+This reduces to the volumes equation in the limit $N_w, N_b \rightarrow \infty$ with $N_w/N_b = \gamma$.
+
+\levelstay{Solution}
+
+We solve the problem by first assuming that the balls are all distinguishable, and that we draw them from the urn in a particular order.
+We will then apply one correction for the fact that the black (white) balls are indistinguishable from each other and another to account for the ordering.
+
+Suppose that the balls, in addition to having color, have some other trait that makes them each completely distinguishable, e.g. they could each be numbered.
+Imagine a particular case where we extract $M$ balls one by one, getting first $n$ white balls and then $k$ black balls
+\begin{equation*}
+  w_1, w_2, \ldots , w_n , b_1, b_2, \ldots , b_k
+  \, .
+\end{equation*}
+What is the probability of this precise string?
+The probability of drawing ball $w_1$ on the first draw is $N_w / (N_w + N_b)$.
+Then, with ball $w_1$ already removed, the probability of drawing ball $w_2$ on the second draw is $(N_w - 1)/(N_w + N_b - 1)$.
+Continuing this reasoning, we find the probability $P$ of the string to be
+\begin{align*}
+  P =&
+  \underbrace{
+    \left(
+      \frac{N_w}{N_w + N_b}
+    \right)
+    \left(
+      \frac{N_w - 1}{N_w + N_b -1}
+    \right)
+    \cdots
+    \left(
+      \frac{N_w - (n - 1)}{N_w + N_b - n + 1}
+    \right)
+  }_\text{probability of white balls} \\
+  & \underbrace{
+    \left(
+      \frac{N_b}{N_w + N_b - n}
+    \right)
+    \left(
+      \frac{N_b - 1}{N_w + N_b - n - 1}
+    \right)
+    \cdots
+    \left(
+      \frac{N_b - (k - 1)}{N_w + N_b - n - k + 1}
+    \right)
+  }_\text{probability of black balls} \\
+  =&
+  \frac{N_w!}{(N_w - n)!}
+  \frac{N_b!}{(N_b - k)!}
+  \frac{(N_w + N_b -n - k)!}{(N_w + N_b)!} \, .
+\end{align*}
+Now of course, we're really trying to find the probability of getting $n$ indistinguishable white balls and $k$ indistinguishable black ones.
+Therefore, shuffling the $n$ white balls or $k$ black balls among themselves does not result in a uniquely distinguishable arrangement of the draws.
+To correct for the overcounting, we should divide by $n! k!$.
+Furthermore, we don't care what order we draw the balls in, so we should multiply by $(n + k)!$.
+The result is
+\begin{equation*}
+  \frac{N_w!}{(N_w - n)! n!} \frac{N_b!}{(N_b - k)k!} \frac{(n + k)!(N_w + N_b - (n + k))!}{(N_w + N_b)!} \, .
+\end{equation*}
+Using the binomial notation we can write
+\begin{equation*}
+  \binom{N_w}{n} \binom{N_b}{k} / \binom{N_w + N_b}{k + n} 
+\end{equation*}
+which is equivalent to what we are trying to show because $M = n + k$.

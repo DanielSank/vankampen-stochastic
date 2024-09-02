@@ -1,0 +1,39 @@
+\leveldown{Moments and characteristic function of subset of variables - pg. 12}
+
+\leveldown{Problem}
+
+Consider the marginal distribution of a subset of all variables.
+Express the moments in terms of the moments of the total distribution, and its characteristic function in terms of the total one.
+
+\levelstay{Solution}
+
+Call the subset of variables $A$ and the other variables $B$.
+Suppose there are $m$ variables in $A$ and $n$ variables in $B$.
+
+Denote the marginal distribution as $P_A$, i.e.
+\begin{equation*}
+  P_A(a) \equiv \int_B P_{A,B}(a, b) \, db
+  \, .
+\end{equation*}
+The moments of $A$ are
+\begin{align*}
+  \avg{A_1^{p_1} \cdots A_m^{p_m}}
+  &= \int_A P_A(a) a_1^{p_1} \cdots a_m^{p_m} da \\
+  &= \int_{A,B} P_{A,B}(a, b) a_1^{p_1} \cdots a_m^{p_m} \, da \, db \\
+  &= \avg{A_1^{p_1} \cdots A_m^{p_m} \, B_1^0 \cdots B_n^0}
+  \, .
+\end{align*}
+
+The characteristic function of $P_A$ is
+\begin{align*}
+  G_A(k_1, \ldots ,k_m)
+  & \equiv \avg{\exp\left[i \sum_{j=1}^m k_j a_j \right]} \\
+  &= \int_A \exp\left[i \sum_{j=1}^m k_j a_j \right] P_A(a) \, da \\
+  &= \int_{A,B} \exp\left[i \sum_{j=1}^m k_j a_j \right] P_{A,B}(a, b) \, da \, db \\
+  &= \int_{A,B}
+  \exp \left[i \sum_{j=1}^m k_j a_j \right] \,
+  \exp \left[i \sum_{j=1}^n 0 \cdot b_j \right]
+  \, P_{A,B}(a, b) \, da \, db \\
+  &= G_{A,B}(k_1, \ldots, k_m, 0, \ldots, 0)
+  \, .
+\end{align*}

@@ -28,11 +28,11 @@ To view the work, run LaTeX on main.tex.
   * One file per exercise.
   * Filename should follow the pattern
     ```
-    {page number}-description_of_exercise.tex`
+    {page number}-description_of_exercise.tex
     ```
   * The first line of each file should be
     ```
-    \leveldown{Description of Exercise - pg. XX}`
+    \leveldown{Description of Exercise - pg. XX}
     ```
 * Start each sentence on a new line.
 * Indent environments with two spaces, e.g.

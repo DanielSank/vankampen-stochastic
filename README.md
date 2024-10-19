@@ -24,24 +24,27 @@ To view the work, run LaTeX on main.tex.
 
 ### Style guide
 
-* File layout
-  * One file per exercise.
-  * Filename should follow the pattern
-    ```
-    {page number}-description_of_exercise.tex
-    ```
-  * The first line of each file should be
-    ```
-    \leveldown{Description of Exercise - pg. XX}
-    ```
-* Start each sentence on a new line.
-* Indent environments with two spaces, e.g.
+1. File layout
+    1. One file per exercise.
+    1. Filename should follow the pattern
+        ```
+        {page number}-description_of_exercise.tex
+        ```
+    1. The first line of each file should be
+        ```
+        \leveldown{Description of Exercise - pg. XX}
+        ```
+
+1. Start each sentence on a new line.
+
+1. Indent environments with two spaces, e.g.
     ```
     \begin{equation}
       f(x) = x^2 \, .
     \end{equation}
     ```
-* If a sentence ends with an equation, put `\, .` at the end of that equation (see above). For multiline blocks of math, put the `\, .` on its own line:
+
+1. If a sentence ends with an equation, put `\, .` at the end of that equation (see above). For multiline blocks of math, put the `\, .` on its own line:
     ```
     \begin{align*}
       f(x)
@@ -51,11 +54,16 @@ To view the work, run LaTeX on main.tex.
       \, .
     \end{align*}
     ```
-* Prefer `\left(` and `\right)` over e.g. `\big )`.
-* Use the `align` environment for multiline math.
-* Write inline fractions like this: `1/2`.
-* Do not use `\frac` inside a superscript. If you have a lot going on inside e.g. an exponential, use
+
+1. Prefer `\left(` and `\right)` over e.g. `\big )`.
+
+1. Use the `align` environment for multiline math.
+
+1. Write inline fractions like this: `1/2`.
+
+1. Do not use `\frac` inside a superscript. If you have a lot going on inside e.g. an exponential, use
     ```
     \exp \left( stuff \right)
     ```
-* Prefer to use the repo's macros, e.g. `\avgang{content}` instead of inlining `\left \lange content \right \rangle`.
+
+1. Prefer to use the repo's macros, e.g. `\avgang{content}` instead of inlining `\left \lange content \right \rangle`.

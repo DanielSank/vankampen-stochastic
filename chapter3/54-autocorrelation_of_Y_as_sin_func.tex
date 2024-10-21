@@ -1,0 +1,106 @@
+\leveldown{Autocorrelation function of Y when Y is a sin function - pg. 54}
+
+\leveldown{Problem}
+
+Let $Y(t) = \sin(\omega t + X)$ where $X$ has a constant probability density in the range $\left( 0, 2\pi \right)$.
+Find the autocorrelation function of $Y$. 
+
+\levelstay{Solution}
+Before applying the autocorrelation function formula given by (1.2), i.e.
+\begin{equation*}
+    \kappa(t_1 , t_2) = \avg{Y(t_1) Y(t_2)} - \avg{Y(t_1)} \avg{Y(t_2)}
+    \, ,
+\end{equation*}
+we point out a trigonometric identity.
+Letting $\alpha = \omega t_1 + x$ and $\beta = \omega t_2 + x$, we have
+\begin{align*}
+  \sin(\alpha)\sin(\beta) = & \frac{1}{2} (\cos(\alpha - \beta) - \cos(\alpha + \beta) ) \\
+  = &  \frac{1}{2} (\cos(\omega t_1 + x - \omega t_2 - x) - \cos(\omega t_1 + x + \omega t_2 + x) ) \\
+  = & \frac{1}{2} ( \cos(\omega(t_1 - t_2 ) ) - \cos(\omega(t_1 + t_2 ) + 2x) )
+  \, .
+\end{align*}
+This identity helps us to obtain the integration formula
+\begin{equation*}
+  \int \sin(a + x) \sin(b + x) dx = \frac{1}{4} (2x \cos(a-b) - \sin(a + b + 2x)
+  \, ,
+\end{equation*}
+where $a$ and $b$ are constants, which we will take to be $\omega t_1$ and $\omega t_2$, respectively.
+We take the ``constant probability density in the range $(0, 2\pi)$'' for $X$ to be
+\begin{equation*}
+  P_{X}(x)=
+  \begin{cases}
+    1 / 2\pi & \text{if } 0 < x < 2\pi \\
+    0 & \text{otherwise}
+  \end{cases}
+  \, .
+\end{equation*}
+
+Now, let $x$ be a particular realization of the process $X$.
+Then the autocorrelarion function for $Y(t) = \sin(\omega t + X)$ is
+\begin{align*}
+  \kappa(t_1 , t_2) = & \avg{Y(t_1) Y(t_2)} - \avg{Y(t_1)} \avg{Y(t_2)} \\
+  = & \int Y_{x}(t_1)Y_{x}(t_2)P_{X}(x)dx - \int Y_{x}(t_1)P_{X}(x)dx \int Y_{x}(t_2)P_{X}(x)dx \\
+  = &  \int_{-\infty}^{\infty}\sin(\omega t_1 + x) \sin(\omega t_2 + x)  P_{X}(x)dx \\
+  &- \left( \int_{-\infty}^{\infty}\sin(\omega t_1 + x)P_{X}(x)dx \right) \left( \int_{-\infty}^{\infty}\sin(\omega t_2 + x) P_{X}(x)dx \right) \\
+  = & \frac{1}{2\pi}\int_{0}^{2\pi}\sin(\omega t_1 + x) \sin(\omega t_2 + x)dx
+  - \left(\frac{1}{2\pi}\int_{0}^{2\pi}\sin(\omega t_1 + x)dx \right) \left( \frac{1}{2\pi}\int_{0}^{2\pi}\sin(\omega t_2 + x)dx \right)
+  \, .
+\end{align*}
+We evaluate each integral separately and then combine them at the end.
+For the first integral term on the right, we apply the trigonometric substitution given above to get
+\begin{align*}
+  \frac{1}{2\pi}\int_{0}^{2\pi}\sin(\omega t_1 + x) \sin(\omega t_2 + x)dx = &  \frac{1}{2\pi}\int_{0}^{2\pi} \frac{1}{2} (\cos(\omega t_1 + x - \omega t_2 - x) - \cos(\omega t_1 + x + \omega t_2 + x )) dx \\
+  = & \frac{1}{2\pi}\int_{0}^{2\pi} \frac{1}{2} ( \cos(\omega(t_1 - t_2 ) ) - \cos(\omega(t_1 + t_2 ) + 2x) )dx \\
+  = & \frac{1}{2\pi} \frac{1}{2} ( \cos(\omega(t_1 - t_2 ) \int_{0}^{2\pi} dx - \int_{0}^{2\pi} \cos(\omega(t_1 + t_2 ) + 2x) )dx )
+  \, ,
+\end{align*}
+where in the first integral we have taken out the $\cos$ term because it is technically a "constant" since it does not depend on the integration variable $x$.
+We will apply a substitution for the second integral by setting $u = \omega(t_1 + t_2) + 2x$ so that $\frac{1}{2} du = dx$, the bounds of integration become $u(0) = \omega(t_1 + t_2) + 2*0 = \omega(t_1 + t_2)$ and $u(2\pi) = \omega(t_1 + t_2) + 2*2\pi = \omega(t_1 + t_2) + 4\pi$ the integrals become
+\begin{align*}
+  \frac{1}{2\pi} & \frac{1}{2} ( \cos(\omega(t_1 - t_2 ) \int_{0}^{2\pi} dx - \int_{0}^{2\pi} \cos(\omega(t_1 + t_2 ) + 2x) )dx ) \\
+  & = \frac{1}{2\pi} \frac{1}{2} ( 2\pi \cos(\omega(t_1 - t_2 ) - \frac{1}{2}\int_{\omega(t_1 + t_2)}^{ \omega(t_1 + t_2) + 4\pi}\cos(u) du ) \\
+  & = \frac{1}{2\pi} \frac{1}{2} ( 2\pi \cos(\omega(t_1 - t_2 ) - \frac{1}{2} \left. \sin(u)  \right|_{\omega(t_1 + t_2)}^{\omega(t_1 + t_2) + 4\pi} )
+  \, .
+\end{align*}
+The last line is evaluated as
+\begin{align*}
+  \frac{1}{2\pi} \frac{1}{2} & ( 2\pi \cos(\omega(t_1 - t_2) - \frac{1}{2} \left. \sin(u)  \right|_{\omega(t_1 + t_2)}^{\omega(t_1 + t_2) + 4\pi} ) \\
+  = & \frac{1}{2\pi} \frac{1}{2} ( 2\pi \cos(\omega(t_1 - t_2) - \frac{1}{2} (\sin( \omega(t_1 + t_2) + 4\pi) - \sin( \omega(t_1 + t_2)) \\
+  = & \frac{1}{2\pi} \frac{1}{2} ( 2\pi \cos(\omega(t_1 - t_2) - \frac{1}{2} \underbrace{ (\sin( \omega(t_1 + t_2)) - \sin( \omega(t_1 + t_2))}_{=0} \\
+  = & \frac{1}{2\pi} \frac{1}{2} ( 2\pi \cos(\omega(t_1 - t_2 ) ) - 0 \\ 
+  = & \frac{1}{2} \cos(\omega(t_1 - t_2 ) )
+  \, ,
+\end{align*}
+resuling in
+\begin{equation*}
+  \frac{1}{2\pi}\int_{0}^{2\pi}\sin(\omega t_1 + x) \sin(\omega t_2 + x)dx = \frac{1}{2} \cos(\omega(t_1 - t_2 ) )
+  \, ,
+\end{equation*}
+where we have used the trigonometric fact that $\sin(x + 2\pi) = \sin(x)$ for some $x \in R$ so that $\sin(\omega(t_1 + t_2) + 4\pi) = \sin(\omega(t_1 + t_2))$ (to see this just split the $4\pi$ into two $2\pi$'s and apply the identity twice).
+
+The second integral is easier to evaluate.
+Notice that both integrals in the second term from our original equation for computing the autocorrelation function have a similar form.
+Thus computing one will essentially give us the other.
+We will see that they both evaluate to $0$.
+To see this, we use a similar substitution from above by setting $u = \omega t_1 + x $ so that we get that $ du = dx$, the bounds of integration become $u(0) = \omega t_1 + 0 = \omega t_1$ and $u(2\pi) = \omega t_1 + 2\pi$ so that the integral becomes
+
+ \begin{align*}
+  \frac{1}{2\pi}\int_{0}^{2\pi}\sin(\omega t_1 + x)dx = & \frac{1}{2\pi}\int_{0}^{2\pi}\sin(\omega t_1 + x)dx \\
+  = & \frac{1}{2\pi}\int_{\omega t_1}^{\omega t_1 + 2\pi}\sin(u)du \\
+  = &  \frac{1}{2\pi} \left. \cos(u) \right|_{\omega t_1}^{\omega t_1 + 2\pi} \\
+  = & \frac{1}{2\pi}  (\cos(\omega t_1 + 2\pi) - \cos(\omega t_1) ) \\
+  = & \frac{1}{2\pi}  (\cos(\omega t_1) - \cos(\omega t_1) ) \\
+  = & 0
+  \, ,
+ \end{align*}
+where we have used a similar trigonometric fact as above, that $\cos(x + 2\pi) = \cos(x)$ for all $x$.
+
+Combining all our results, we get that the autocorrelation function of $Y(t) = \sin(\omega t + X)$
+\begin{equation*}
+  \kappa(t_1 , t_2) = \frac{1}{2} \cos(\omega(t_1 - t_2 ) )
+  \, .
+\end{equation*}
+Note there is a bit of discrepancy in the answer.
+The ``constant probability density'' $P_{X}(x)$ could have simply been defined as 1 for valid $x$, and our answer would have differed by a slight factor.
+I chose to solve the ``normalized'' version.
+The method presented here would be the same way to solve it, however the answer would differ slightly by a constant, so always be careful whether you're using math or physics convention.

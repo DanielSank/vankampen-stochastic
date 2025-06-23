@@ -16,17 +16,22 @@ Show that this is the only $P$ for which that is true.
 Use Bayes's rule,
 \begin{equation*}
   P_{\text{die at age}|\text{alive at age}}(t | \tau)
-  = \frac{P_{\text{die at age \& alive at age}}(t, \tau)}{P_{\text{alive at age}}(\tau)}
+  = \frac{P_{\text{alive at age}|\text{die at age}}(\tau, t)P(t)}{P_{\text{alive at age}}(\tau)}
   \, .
 \end{equation*}
-If your age is $\tau$ that means you die at some time $t'$ such that $t' > \tau$.
-Therefore, the probability that a given person is still alive at age $\tau$ is
+If your age is $\tau$ that means you die at some time $t$ such that $t > \tau$.
+Therefore, the conditional probabilities are nonzero only when $t > \tau$ and so we work in that case for the rest of the problem.
+
+For the denominator, the probability that a given person is still alive at age $\tau$ is the sum of probabilities that they die at some time $t$ after $\tau$, i.e.
 \begin{equation*}
-  \text{alive at age }\tau = \int_\tau^\infty P(t') \, dt'
+  P_\text{alive at age }(\tau) = \int_\tau^\infty P(t') \, dt'
   \, .
 \end{equation*}
-Also, when $t > \tau$, the joint probability that a person is alive at $\tau$ and dies at $t$ is the same thing as the marginal probability that the person dies at $t$.
-Therefore we have
+For the numerator, in the case $t > \tau$, the conditional probability is identically equal to one
+\begin{displaymath}
+  P_{\text{alive at age}|\text{die at age}}(\tau, t) = 1
+\end{displaymath}
+so
 \begin{equation*}
   P_{\text{die at age}|\text{alive at age}}(t | \tau)
   = \frac{P(t)}{\int_\tau^\infty P(t') \, dt'}
@@ -45,7 +50,7 @@ Therefore, the conditional probability is
 \begin{equation*}
   P_{\text{die at age}|\text{alive at age}}(t | \tau)
   = \frac{\gamma e^{-\gamma t}}{e^{-\gamma \tau}} = \gamma e^{-\gamma (t - \tau)}
-  = P_\text{die at age} ( t - \tau)
+  = P( t - \tau)
 \end{equation*}
 which is what we wanted to show.
 
